@@ -8,24 +8,22 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    public function index()
-    {
-        return view("home");
-    }
-
-
-    public function verified()
-    {
-        $usertype = Auth::user()->usertype;
-
-        if ($usertype == "1") {
-            return view("admin.admin");
+   
+        public function __construct()
+        {
+            $this->middleware('auth');
         }
 
-        else {
-            return view("dashboard");
-        }
-    }
+        public function verified()
+        {
+            $user = Auth::user();
 
+            if ($user->usertype === config('constants.USER_TYPE_ADMIN')) {
+                return view("admin.admin");
+            } else {
+                return view("dashboard");
+            }
+        }
 
 }
+
