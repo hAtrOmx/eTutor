@@ -25,5 +25,10 @@ class HomeController extends Controller
             }
         }
 
+        // C'est fonction permet de verifier 
+
+
+
+
 }
 
