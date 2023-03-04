@@ -8,11 +8,15 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-   
-        public function __construct()
+        public function index() 
         {
-            $this->middleware('auth');
-        }
+            return view("home");
+        } 
+
+        // public function __construct()
+        // {
+        //     $this->middleware('auth');
+        // }
 
         public function verified()
         {
@@ -25,10 +29,6 @@ class HomeController extends Controller
             }
         }
 
-        // C'est fonction permet de verifier 
-
-
-
-
+    
 }
 

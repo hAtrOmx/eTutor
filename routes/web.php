@@ -19,8 +19,6 @@ Route::get('/', [HomeController::class, "index"]);
 
 Route::get('/redirects', [HomeController::class, "verified"]);
 
-
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
